@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISRAH.SWING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page (index.html) -->
+    <header>
+        <h1>Welcome to MISRAH.SWING</h1>
+        <p>Your resource for learning Java Swing components.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#button">JButton</a></li>
+            <li><a href="#label">JLabel</a></li>
+            <li><a href="#textfield">JTextField</a></li>
+            <li><a href="#textarea">JTextArea</a></li>
+            <li><a href="#panel">JPanel</a></li>
+            <li><a href="#menu">JMenu</a></li>
+            <li><a href="#resources">Additional Resources</a></li>
+        </ul>
+    </nav>
+
+    <section id="button" class="content">
+        <h2>JButton</h2>
+        <p>The <code>JButton</code> class is part of the Java Swing library. It is used to create a button in a graphical user interface. The button can be clicked to perform an action.</p>
+
+        <h3>Example</h3>
+        <pre><code>
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class ButtonExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JButton Example");
+        JButton button = new JButton("Click Me");
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Button clicked!");
+            }
+        });
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(button);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code></pre>
+
+        <h3>Explanation</h3>
+        <ul>
+            <li><strong>JFrame</strong>: The main window container.</li>
+            <li><strong>JButton</strong>: A button that performs an action when clicked.</li>
+            <li><strong>ActionListener</strong>: Interface to listen for button click events.</li>
+        </ul>
+
+        <h3>Further Resources</h3>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html" target="_blank">Official Documentation - JButton</a></li>
+            <li><a href="https://www.tutorialspoint.com/java/swing/jbutton_example.htm" target="_blank">TutorialsPoint - JButton Example</a></li>
+        </ul>
+    </section>
+
+    <section id="label" class="content">
+        <h2>JLabel</h2>
+        <p>The <code>JLabel</code> class is used to display a short string or an image icon in a GUI.</p>
+
+        <h3>Example</h3>
+        <pre><code>
+import javax.swing.*;
+
+public class JLabelExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JLabel Example");
+        JLabel label = new JLabel("Hello, Java Swing!");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(label);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code></pre>
+
+        <h3>Further Resources</h3>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JLabel.html" target="_blank">Official Documentation - JLabel</a></li>
+        </ul>
+    </section>
+
+    <section id="textfield" class="content">
+        <h2>JTextField</h2>
+        <p>The <code>JTextField</code> class is used to get input from the user in the form of a single line of text.</p>
+
+        <h3>Example</h3>
+        <pre><code>
+import javax.swing.*;
+
+public class JTextFieldExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JTextField Example");
+        JTextField textField = new JTextField("Enter text here");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(textField);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code></pre>
+
+        <h3>Further Resources</h3>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextField.html" target="_blank">Official Documentation - JTextField</a></li>
+        </ul>
+    </section>
+
+    <section id="textarea" class="content">
+        <h2>JTextArea</h2>
+        <p>The <code>JTextArea</code> class allows multiple lines of text to be displayed and edited by the user.</p>
+
+        <h3>Example</h3>
+        <pre><code>
+import javax.swing.*;
+
+public class JTextAreaExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JTextArea Example");
+        JTextArea textArea = new JTextArea("This is a multi-line text area.");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(textArea);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code></pre>
+
+        <h3>Further Resources</h3>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html" target="_blank">Official Documentation - JTextArea</a></li>
+        </ul>
+    </section>
+
+    <section id="panel" class="content">
+        <h2>JPanel</h2>
+        <p>The <code>JPanel</code> class is a generic container used to organize components in a container.</p>
+
+        <h3>Example</h3>
+        <pre><code>
+import javax.swing.*;
+import java.awt.*;
+
+public class JPanelExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JPanel Example");
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+
+        JLabel label = new JLabel("This is a panel!");
+        JButton button = new JButton("Click Me");
+
+        panel.add(label);
+        panel.add(button);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code></pre>
+
+        <h3>Further Resources</h3>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html" target="_blank">Official Documentation - JPanel</a></li>
+        </ul>
+    </section>
+
+    <section id="menu" class="content">
+        <h2>JMenu</h2>
+        <p>The <code>JMenu</code> class provides a menu component that allows the user to select from various options.</p>
+
+        <h3>Example</h3>
+        <pre><code>
+import javax.swing.*;
+
+public class JMenuExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JMenu Example");
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("File");
+        JMenuItem menuItem = new JMenuItem("Open");
+
+        menu.add(menuItem);
+        menuBar.add(menu);
+        frame.setJMenuBar(menuBar);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+}
+        </code></pre>
+
+        <h3>Further Resources</h3>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html" target="_blank">Official Documentation - JMenu</a></li>
+        </ul>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="content">
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/package-summary.html" target="_blank">Official Swing Documentation</a></li>
+            <li><a href="https://www.geeksforgeeks.org/java-swing-tutorial/" target="_blank">GeeksforGeeks Java Swing Tutorial</a></li>
+            <li><a href="https://www.tutorialspoint.com/java/java_swing.htm" target="_blank">TutorialsPoint Java Swing</a></li>
+            <li><a href="https://www.udemy.com/course/learn-java-swing-by-building-a-notepad-in-java/" target="_blank">Udemy: Learn Java Swing by Building a Notepad</a></li>
+        </ul>
+
+        <h3>Books</h3>
+        <ul>
+            <li><a href="https://www.amazon.com/Java-Swing-John-R-Zukowski/dp/013089416X" target="_blank">Java Swing by John Zukowski</a></li>
+            <li><a href="https://www.amazon.com/Pro-Java-Swing-Second/dp/1590594325" target="_blank">Pro Java Swing by Nicholas S. Williams</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Created by MISRAH.SWING | 2024</p>
+    </footer>
+</body>
+</html>
